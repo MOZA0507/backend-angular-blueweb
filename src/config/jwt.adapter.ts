@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 const JWT_SEED = 'adgjlzcbmqetuo159';
 
 export class JwtAdapter {
-  static async generateToken(payload: any, duration: string = '2m'){
+  static async generateToken(payload: any, duration: string = '3h'){
     return new Promise((resolve) => {
       jwt.sign(payload, JWT_SEED, {expiresIn: duration},(err, token)=>{
         if (err) return resolve(null);
